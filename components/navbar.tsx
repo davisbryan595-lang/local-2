@@ -84,13 +84,6 @@ export default function Navbar({ scrollY }: NavbarProps) {
         )}
       </div>
 
-      {/* Decorative Snake on Navbar */}
-      <div className="absolute top-2 right-20 w-16 h-8 opacity-60 animate-snake-sway hidden lg:block">
-        <svg viewBox="0 0 100 50" className="w-full h-full" fill="none">
-          <path d="M10 25 Q30 15 50 25 Q70 35 90 25" stroke="currentColor" strokeWidth="3" className="text-primary" />
-          <circle cx="90" cy="25" r="2" fill="currentColor" className="text-primary" />
-        </svg>
-      </div>
     </nav>
   )
 }
