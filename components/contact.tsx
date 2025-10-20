@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { Phone, Mail, MapPin, Send, Twitter, Facebook, Instagram, Linkedin } from "lucide-react"
 
 interface ContactProps {
   scrollY: number
@@ -46,7 +46,7 @@ export default function Contact({ scrollY }: ContactProps) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Contact Info */}
           <div className="space-y-8">
             {/* Phone */}
@@ -169,6 +169,35 @@ export default function Contact({ scrollY }: ContactProps) {
               {submitted ? "Message Sent!" : "Send Message"}
             </button>
           </form>
+
+          {/* Social & Quick Contact Card */}
+          <div className="p-6 rounded-xl border border-primary/20 bg-card/60">
+            <h3 className="text-lg font-semibold text-foreground mb-4">Connect with Us</h3>
+            <p className="text-muted-foreground mb-4">Follow us for updates, before/after photos, and specials.</p>
+            <div className="flex items-center gap-3 mb-4">
+              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
+                <Twitter className="h-5 w-5 text-primary" />
+              </a>
+              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
+                <Facebook className="h-5 w-5 text-primary" />
+              </a>
+              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
+                <Instagram className="h-5 w-5 text-primary" />
+              </a>
+              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
+                <Linkedin className="h-5 w-5 text-primary" />
+              </a>
+            </div>
+
+            <div className="mt-4">
+              <h4 className="text-sm font-semibold text-foreground mb-2">Quick Links</h4>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#gallery" className="hover:text-primary transition-colors">Gallery</a></li>
+                <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
