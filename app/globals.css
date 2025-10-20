@@ -302,18 +302,27 @@
   background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.25));
 }
 
-/* Hanging snake overlay */
-.nav-snake-hang {
+/* Snake base and top layers for weaving effect */
+.nav-snake-base, .nav-snake-top {
   position: absolute;
   top: 6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 340px;
+  width: 360px;
   height: auto;
-  z-index: 20;
   pointer-events: none;
   opacity: 0.95;
-  animation: snake-sway 4s ease-in-out infinite;
+  -webkit-user-drag: none;
+}
+.nav-snake-base { z-index: 20; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); animation: snake-sway 4s ease-in-out infinite; }
+.nav-snake-top { z-index: 40; animation: snake-sway 4s ease-in-out infinite; }
+
+/* Create stripes mask so only bands of the top image show (weave over nav) */
+.nav-snake-top {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 22%, rgba(0,0,0,0) 34%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 68%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 22%, rgba(0,0,0,0) 34%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 68%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 /* Section backgrounds */
