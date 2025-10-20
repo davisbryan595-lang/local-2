@@ -202,3 +202,63 @@
   box-shadow: 0 0 30px rgba(85, 239, 196, 0.5);
   transform: translateY(-4px);
 }
+
+/* Site-wide background snake video */
+.site-bg-video-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+.site-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.site-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklch, var(--background) 60%, transparent),
+    var(--background)
+  );
+}
+
+/* Molten glass navbar styling */
+.nav-molten {
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--card) 40%, transparent),
+    color-mix(in oklch, var(--background) 60%, transparent)
+  );
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.nav-snake-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.nav-snake-bg .nav-snake-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+}
+
+/* Section backgrounds */
+.section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.section-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.6)); }
+
+/* HD background images */
+.hero-bg { background-image: url('https://images.pexels.com/photos/30108585/pexels-photo-30108585.jpeg'); }
+.services-bg { background-image: url('https://images.pexels.com/photos/33108373/pexels-photo-33108373.jpeg'); }
+.gallery-bg { background-image: url('https://images.pexels.com/photos/19872375/pexels-photo-19872375.jpeg'); }
+.contact-bg { background-image: url('https://images.pexels.com/photos/4876671/pexels-photo-4876671.jpeg'); }
