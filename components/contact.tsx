@@ -35,6 +35,8 @@ export default function Contact({ scrollY }: ContactProps) {
 
   return (
     <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/30 to-background">
+      <div className="section-bg contact-bg" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
