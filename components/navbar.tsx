@@ -16,6 +16,12 @@ export default function Navbar({ scrollY }: NavbarProps) {
     >
       <div className="nav-bg-image" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hanging snake overlay (purely decorative) */}
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F600eb541fd904e9a83d2dcc177639ce2?format=webp&width=800"
+          alt="decorative-snake"
+          className="nav-snake-hang hidden lg:block"
+        />
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
