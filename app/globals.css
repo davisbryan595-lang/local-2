@@ -253,6 +253,36 @@
   mix-blend-mode: overlay;
 }
 
+/* Nav weave wrapper and strips */
+.nav-weave {
+  position: relative;
+  overflow: visible;
+}
+.nav-weave-img {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  height: calc(100% + 16px);
+  width: auto;
+  opacity: 0.95;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.nav-content { position: relative; z-index: 30; }
+.nav-weave-strip {
+  position: absolute;
+  left: 0;
+  z-index: 25;
+  pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in oklch, var(--card) 60%, transparent), color-mix(in oklch, var(--background) 40%, transparent));
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.nav-weave-strip-1 { top: 6px; right: 0; height: 22px; }
+.nav-weave-strip-2 { top: 34px; right: 10%; height: 22px; width: 80%; border-radius: 8px; }
+.nav-weave-strip-3 { top: 62px; right: 20%; height: 22px; width: 60%; border-radius: 8px; }
+
 /* Section backgrounds */
 .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .section-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.6)); }
