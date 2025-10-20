@@ -13,7 +13,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrollY > 50 ? "bg-background/60 backdrop-blur-md border-b border-primary/20" : "bg-background/10"
+        scrollY > 50 ? "bg-background/95 backdrop-blur-md border-b border-primary/20" : "bg-background/40"
       }`}
     >
       <div className="nav-bg-image" aria-hidden="true" />
