@@ -20,6 +20,7 @@ export default function Hero({ scrollY }: HeroProps) {
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 z-10">
 
         {/* Text */}
+        <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F5df00a36208346c3b4639bd8283ddf8a?format=webp&width=800" alt="Local Lakefront logo" className="w-32 h-32 mx-auto rounded-md shadow-md mb-4" />
         <h1 className="text-5xl md:text-7xl font-bold text-primary mb-4 text-balance">Local Lakefront</h1>
         <p className="text-xl md:text-2xl text-primary/80 mb-2 font-semibold">Your Waterfront, Perfected.</p>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl">

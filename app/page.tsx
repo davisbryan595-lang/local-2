@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
 import Gallery from "@/components/gallery"
+import Pricing from "@/components/pricing"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero scrollY={scrollY} />
       <Services scrollY={scrollY} />
       <Gallery scrollY={scrollY} />
+      <Pricing />
       <Contact scrollY={scrollY} />
       <Footer />
     </main>

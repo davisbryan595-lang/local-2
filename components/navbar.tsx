@@ -18,22 +18,15 @@ export default function Navbar({ scrollY }: NavbarProps) {
     >
       <div className="nav-snake-bg" aria-hidden="true">
         <video className="nav-snake-video" autoPlay loop muted playsInline>
-          <source src="https://videos.pexels.com/video-files/8985269/8985269-hd_2048_858_24fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/34366056/14559005_640_360_30fps.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 relative">
-              <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-                <path
-                  d="M30 40 Q40 30 50 35 Q60 40 65 50 Q70 60 60 70 Q50 75 40 70 Q30 65 25 55"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="text-primary"
-                />
-              </svg>
+            <div className="w-12 h-12 relative overflow-hidden rounded-md">
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F5df00a36208346c3b4639bd8283ddf8a?format=webp&width=800" alt="Local Lakefront logo" className="w-full h-full object-cover" />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-primary">Local Lakefront</h1>

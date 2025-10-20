@@ -27,6 +27,14 @@ const beforeAfterPairs = [
   },
 ]
 
+const additionalImages = [
+  "https://images.pexels.com/photos/19872375/pexels-photo-19872375.jpeg",
+  "https://images.pexels.com/photos/33108373/pexels-photo-33108373.jpeg",
+  "https://images.pexels.com/photos/30108585/pexels-photo-30108585.jpeg",
+  "https://images.pexels.com/photos/9246492/pexels-photo-9246492.jpeg",
+  "https://images.pexels.com/photos/4876671/pexels-photo-4876671.jpeg",
+]
+
 export default function Gallery({ scrollY }: GalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [sliderPosition, setSliderPosition] = useState(50)
@@ -105,6 +113,15 @@ export default function Gallery({ scrollY }: GalleryProps) {
 
           {/* Project Title */}
           <h3 className="text-2xl font-bold text-foreground mt-6 text-center">{current.title}</h3>
+
+          {/* Additional gallery grid */}
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {additionalImages.map((src, idx) => (
+              <div key={idx} className="rounded-lg overflow-hidden border border-primary/20">
+                <img src={src} alt={`Gallery ${idx + 1}`} className="w-full h-44 object-cover" />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Navigation */}
