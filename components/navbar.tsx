@@ -64,19 +64,12 @@ export default function Navbar({ scrollY }: NavbarProps) {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-3 border-t border-primary/20">
-            <a href="#services" className="block text-foreground hover:text-primary transition-colors py-2">
-              Services
-            </a>
-            <a href="#gallery" className="block text-foreground hover:text-primary transition-colors py-2">
-              Gallery
-            </a>
-            <a href="#contact" className="block text-foreground hover:text-primary transition-colors py-2">
-              Contact
-            </a>
-            <a
-              href="tel:863-215-9440"
-              className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg w-fit"
-            >
+            <a href="#top" className="block text-foreground hover:text-primary transition-colors py-2">Home</a>
+            <a href="#services" className="block text-foreground hover:text-primary transition-colors py-2">Services</a>
+            <a href="#gallery" className="block text-foreground hover:text-primary transition-colors py-2">Gallery</a>
+            <a href="#pricing" className="block text-foreground hover:text-primary transition-colors py-2">Pricing</a>
+            <a href="#contact" className="block text-foreground hover:text-primary transition-colors py-2">Contact</a>
+            <a href="tel:863-215-9440" className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg w-fit">
               <Phone size={18} />
               <span>Call Now</span>
             </a>
