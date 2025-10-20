@@ -32,18 +32,18 @@ export default function Pricing() {
 
         <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
           {plans.map((plan) => (
-            <div key={plan.name} className={`p-6 rounded-xl border border-primary/20 bg-card/40 ${plan.popular ? "shadow-lg scale-105" : ""}`}>
+            <div key={plan.name} className={`pricing-card ${plan.popular ? "shadow-lg scale-105" : ""}`}>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
-                <div className="text-2xl font-bold text-primary">{plan.price}</div>
+                <div className="price">Starting at <span className="text-2xl ml-2">{plan.price}</span></div>
               </div>
               <ul className="mb-6 text-muted-foreground">
                 {plan.features.map((f) => (
                   <li key={f} className="py-1">{f}</li>
                 ))}
               </ul>
-              <a href="#contact" className="inline-block w-full text-center bg-primary text-primary-foreground px-4 py-2 rounded-lg hover-glow">
-                Choose {plan.name}
+              <a href="#contact" className="liquid-btn inline-block w-full text-center bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold">
+                <span>Choose {plan.name}</span>
               </a>
             </div>
           ))}
