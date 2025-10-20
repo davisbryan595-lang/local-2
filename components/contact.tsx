@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Phone, Mail, MapPin, Send, Twitter, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin, Send } from "lucide-react"
 
 interface ContactProps {
   scrollY: number
@@ -25,177 +25,81 @@ export default function Contact({ scrollY }: ContactProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulate form submission
     setSubmitted(true)
     setTimeout(() => {
       setSubmitted(false)
       setFormData({ name: "", phone: "", email: "", message: "" })
-    }, 3000)
+    }, 2000)
   }
 
   return (
     <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-card/30 to-background">
       <div className="section-bg contact-bg" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
+
       <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Get in Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ready to transform your waterfront? Contact us today for a free consultation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            {/* Phone */}
-            <div className="flex gap-4 hover-glow p-6 rounded-lg">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Call Us</h3>
-                <a href="tel:863-215-9440" className="text-primary hover:text-primary/80 transition-colors">
-                  863-215-9440
-                </a>
-                <p className="text-sm text-muted-foreground mt-1">Matthew Dilts</p>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex gap-4 hover-glow p-6 rounded-lg">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Email</h3>
-                <p className="text-muted-foreground">Contact via phone for fastest response</p>
-              </div>
-            </div>
-
-            {/* Service Areas */}
-            <div className="flex gap-4 hover-glow p-6 rounded-lg">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-foreground">Service Areas</h3>
-                <p className="text-muted-foreground">Polk County, Lake County, Hernando County & surrounding areas</p>
-              </div>
-            </div>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6 p-8 rounded-xl border border-primary/20 bg-card/50 backdrop-blur"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-xl border border-primary/20 bg-card/50 backdrop-blur">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                placeholder="Your name"
-              />
+              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Name</label>
+              <input id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                Phone
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                placeholder="Your phone number"
-              />
+              <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">Phone</label>
+              <input id="phone" name="phone" value={formData.phone} onChange={handleChange} required className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                placeholder="Your email"
-              />
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">Email</label>
+              <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                placeholder="Tell us about your project"
-              />
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">Message</label>
+              <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} required className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none" />
             </div>
 
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover-glow transition-all"
-            >
-              <Send size={18} />
-              {submitted ? "Message Sent!" : "Send Message"}
-            </button>
+            <div className="flex gap-4">
+              <a href="tel:863-215-9440" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover-glow">
+                <Phone />
+                Call Now: 863-215-9440
+              </a>
+
+              <button type="submit" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/20 bg-card/60 text-foreground font-semibold hover-glow">
+                <Send />
+                Send Message
+              </button>
+            </div>
           </form>
 
-          {/* Social & Quick Contact Card */}
-          <div className="p-6 rounded-xl border border-primary/20 bg-card/60">
-            <h3 className="text-lg font-semibold text-foreground mb-4">Connect with Us</h3>
-            <p className="text-muted-foreground mb-4">Follow us for updates, before/after photos, and specials.</p>
-            <div className="flex items-center gap-3 mb-4">
-              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
-                <Twitter className="h-5 w-5 text-primary" />
-              </a>
-              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
-                <Facebook className="h-5 w-5 text-primary" />
-              </a>
-              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
-                <Instagram className="h-5 w-5 text-primary" />
-              </a>
-              <a href="#" className="p-3 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors">
-                <Linkedin className="h-5 w-5 text-primary" />
-              </a>
+          {/* Map & Phone CTA */}
+          <div className="space-y-6">
+            <div className="rounded-xl overflow-hidden border border-primary/20">
+              <iframe
+                title="Service Area Map"
+                src="https://www.google.com/maps?q=Polk+County+FL&output=embed"
+                className="w-full h-72"
+                style={{ border: 0 }}
+                loading="lazy"
+              />
             </div>
 
-            <div className="mt-4">
-              <h4 className="text-sm font-semibold text-foreground mb-2">Quick Links</h4>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-                <li><a href="#gallery" className="hover:text-primary transition-colors">Gallery</a></li>
-                <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
-              </ul>
+            <div className="p-6 rounded-xl border border-primary/20 bg-card/60 text-center">
+              <h3 className="text-2xl font-bold text-foreground mb-2">Ready to start?</h3>
+              <p className="text-muted-foreground mb-4">Call us for a free consultation and quote.</p>
+              <a href="tel:863-215-9440" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover-glow">
+                <Phone />
+                863-215-9440
+              </a>
             </div>
           </div>
         </div>
