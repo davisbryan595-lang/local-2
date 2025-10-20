@@ -30,6 +30,8 @@ const services = [
 export default function Services({ scrollY }: ServicesProps) {
   return (
     <section id="services" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-card/30">
+      <div className="section-bg services-bg" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background" />
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -77,17 +79,6 @@ export default function Services({ scrollY }: ServicesProps) {
           })}
         </div>
 
-        {/* Decorative snake between sections */}
-        <div className="mt-20 flex justify-center opacity-30">
-          <svg viewBox="0 0 200 100" className="w-48 h-24" fill="none">
-            <path
-              d="M20 50 Q50 30 80 50 Q110 70 140 50 Q170 30 200 50"
-              stroke="currentColor"
-              strokeWidth="3"
-              className="text-primary"
-            />
-          </svg>
-        </div>
       </div>
     </section>
   )
