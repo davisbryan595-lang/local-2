@@ -12,22 +12,10 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-background border-b border-primary/20`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-transparent`}
     >
       <div className="nav-bg-image" aria-hidden="true" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hanging snake base (under nav content) */}
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F600eb541fd904e9a83d2dcc177639ce2?format=webp&width=800"
-          alt="snake-base"
-          className="nav-snake-base hidden lg:block"
-        />
-        {/* Hanging snake top strips (appears above nav content via mask stripes) */}
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F600eb541fd904e9a83d2dcc177639ce2?format=webp&width=800"
-          alt="snake-top"
-          className="nav-snake-top hidden lg:block"
-        />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
