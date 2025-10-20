@@ -26,6 +26,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`font-sans antialiased bg-background text-foreground`}>
+        <div className="site-bg-video-container" aria-hidden="true">
+          <video className="site-bg-video" autoPlay loop muted playsInline>
+            <source src="https://videos.pexels.com/video-files/8985269/8985269-hd_2048_858_24fps.mp4" type="video/mp4" />
+          </video>
+          <div className="site-bg-overlay" />
+        </div>
         {children}
         <Analytics />
       </body>

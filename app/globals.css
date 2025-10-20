@@ -202,3 +202,219 @@
   box-shadow: 0 0 30px rgba(85, 239, 196, 0.5);
   transform: translateY(-4px);
 }
+
+/* Site-wide background snake video */
+.site-bg-video-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+.site-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.site-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklch, var(--background) 60%, transparent),
+    var(--background)
+  );
+}
+
+/* Molten glass navbar styling */
+.nav-molten {
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--card) 40%, transparent),
+    color-mix(in oklch, var(--background) 60%, transparent)
+  );
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.nav-snake-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.nav-snake-bg .nav-snake-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+}
+
+/* Nav weave wrapper and strips */
+.nav-weave {
+  position: relative;
+  overflow: visible;
+}
+.nav-weave-img {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+  height: calc(100% + 16px);
+  width: auto;
+  opacity: 0.95;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.nav-content { position: relative; z-index: 30; }
+.nav-weave-strip {
+  position: absolute;
+  left: 0;
+  z-index: 25;
+  pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in oklch, var(--card) 60%, transparent), color-mix(in oklch, var(--background) 40%, transparent));
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.nav-weave-strip-1 { top: 6px; right: 0; height: 22px; }
+.nav-weave-strip-2 { top: 34px; right: 10%; height: 22px; width: 80%; border-radius: 8px; }
+.nav-weave-strip-3 { top: 62px; right: 20%; height: 22px; width: 60%; border-radius: 8px; }
+
+/* Navbar background image */
+.nav-bg-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  width: 340px;
+  height: 120px;
+  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fea216b169e224bce8f7acfaf35876986?format=webp&width=800');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.95;
+  mix-blend-mode: multiply;
+  animation: float-up 6s ease-in-out infinite;
+}
+.nav-bg-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+/* Snake base and top layers for weaving effect */
+.nav-snake-base, .nav-snake-top {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.95;
+  -webkit-user-drag: none;
+}
+.nav-snake-base { z-index: 20; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); animation: snake-sway 4s ease-in-out infinite; }
+.nav-snake-top { z-index: 40; animation: snake-sway 4s ease-in-out infinite; }
+
+/* Create stripes mask so only bands of the top image show (weave over nav) */
+.nav-snake-top {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 22%, rgba(0,0,0,0) 34%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 68%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 22%, rgba(0,0,0,0) 34%, rgba(0,0,0,1) 56%, rgba(0,0,0,0) 68%, rgba(0,0,0,1) 86%, rgba(0,0,0,0) 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Section backgrounds */
+.section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.section-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.6)); }
+
+/* HD background images */
+.hero-bg { background-image: url('https://images.pexels.com/photos/30108585/pexels-photo-30108585.jpeg'); }
+.services-bg { background-image: url('https://images.pexels.com/photos/33108373/pexels-photo-33108373.jpeg'); }
+.gallery-bg { background-image: url('https://images.pexels.com/photos/19872375/pexels-photo-19872375.jpeg'); }
+.contact-bg { background-image: url('https://images.pexels.com/photos/4876671/pexels-photo-4876671.jpeg'); }
+
+/* Smooth scrolling for anchor links */
+html { scroll-behavior: smooth; }
+
+/* Gallery grid and effects - responsive grid that fits the screen */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.masonry-item {
+  height: 320px;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.masonry-item img { width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: center; transition: transform 0.5s ease; }
+.masonry-item:hover img { transform: scale(1.06); }
+.masonry-item .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.45), transparent); opacity:0; transition: opacity 0.3s ease; }
+.masonry-item:hover .overlay { opacity: 1; }
+.masonry-item .view-label { position: absolute; bottom: 12px; left: 12px; background: rgba(255,255,255,0.06); padding: 6px 10px; border-radius: 6px; color: var(--foreground); }
+
+/* Before/After slider styles */
+.cursor-col-resize { cursor: col-resize; }
+
+/* Lightbox */
+.fixed img.rounded { box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+
+/* Pricing cards - glass + glow + hover effects */
+.pricing-card {
+  position: relative;
+  padding: 2rem;
+  min-height: 520px;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, color-mix(in oklch, var(--card) 60%, transparent), color-mix(in oklch, var(--background) 20%, transparent));
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px) saturate(120%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 40px 60px rgba(255,102,0,0.12); }
+.pricing-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(90deg, rgba(255,140,0,0.15), rgba(255,60,60,0.12));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.pricing-card:hover::after { opacity: 1; }
+.pricing-card .price { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+
+/* Liquid-fill button */
+.liquid-btn {
+  position: relative;
+  overflow: hidden;
+}
+.liquid-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,140,0,0.15), rgba(255,60,60,0.15));
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(.2,.9,.2,1);
+  z-index: 0;
+}
+.liquid-btn > * { position: relative; z-index: 10; }
+.liquid-btn:hover::before { transform: translateX(0%); }
+
+/* Orange/red glow under cards on hover */
+.pricing-card:hover { box-shadow: 0 30px 40px rgba(255,120,60,0.12), 0 10px 20px rgba(255,80,40,0.08); }
