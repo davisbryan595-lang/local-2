@@ -283,6 +283,25 @@
 .nav-weave-strip-2 { top: 34px; right: 10%; height: 22px; width: 80%; border-radius: 8px; }
 .nav-weave-strip-3 { top: 62px; right: 20%; height: 22px; width: 60%; border-radius: 8px; }
 
+/* Navbar background image */
+.nav-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F83af6d0674e44585b34a1005146111ba?format=webp&width=800');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+}
+.nav-bg-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.25));
+}
+
 /* Section backgrounds */
 .section-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .section-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.6)); }
