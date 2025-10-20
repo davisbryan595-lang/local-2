@@ -20,15 +20,8 @@ export default function Navbar({ scrollY }: NavbarProps) {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 relative">
-              <svg viewBox="0 0 100 100" className="w-full h-full" fill="none">
-                <path
-                  d="M30 40 Q40 30 50 35 Q60 40 65 50 Q70 60 60 70 Q50 75 40 70 Q30 65 25 55"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="text-primary"
-                />
-              </svg>
+            <div className="w-12 h-12 relative overflow-hidden rounded-md">
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F964148a122ef436c901b05bd9983b95f?format=webp&width=800" alt="Local Lakefront logo" className="w-full h-full object-cover" />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl font-bold text-primary">Local Lakefront</h1>
@@ -38,11 +31,17 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
+            <a href="#top" className="text-foreground hover:text-primary transition-colors">
+              Home
+            </a>
             <a href="#services" className="text-foreground hover:text-primary transition-colors">
               Services
             </a>
             <a href="#gallery" className="text-foreground hover:text-primary transition-colors">
               Gallery
+            </a>
+            <a href="#pricing" className="text-foreground hover:text-primary transition-colors">
+              Pricing
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
