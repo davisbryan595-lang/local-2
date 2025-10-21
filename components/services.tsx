@@ -48,7 +48,7 @@ export default function Services({ scrollY }: ServicesProps) {
             return (
               <div
                 key={index}
-                className={`group relative p-8 rounded-xl border border-primary/20 bg-gradient-to-br ${service.color} hover-glow hover-float transition-all duration-300 cursor-pointer`}
+                className={`group relative p-8 rounded-xl border border-primary/20 bg-gradient-to-br ${service.color} hover-float transition-all duration-300 cursor-pointer`}
               >
                 {/* Glow effect on hover */}
                 <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
