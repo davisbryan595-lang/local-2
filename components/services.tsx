@@ -10,7 +10,7 @@ const services = [
   {
     icon: Trees,
     title: "Tree Removal",
-    description: "Professional tree removal services for waterfront properties, ensuring safe and efficient clearing.",
+    description: "We specialize in all tree removals—residential, commercial, and waterfront—handled safely and efficiently.",
     color: "from-primary/20 to-primary/5",
   },
   {
