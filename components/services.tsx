@@ -37,7 +37,7 @@ export default function Services({ scrollY }: ServicesProps) {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Services</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive waterfront restoration solutions tailored to your needs
+            Skilled waterfront solutions — fast, safe, and sustainable.
           </p>
         </div>
 
