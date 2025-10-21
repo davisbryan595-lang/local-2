@@ -28,13 +28,13 @@ const beforeAfterPairs = [
 ]
 
 const additionalImages = [
-  "https://images.pexels.com/photos/19872375/pexels-photo-19872375.jpeg",
-  "https://images.pexels.com/photos/33108373/pexels-photo-33108373.jpeg",
-  "https://images.pexels.com/photos/30108585/pexels-photo-30108585.jpeg",
-  "https://images.pexels.com/photos/9246492/pexels-photo-9246492.jpeg",
-  "https://images.pexels.com/photos/4876671/pexels-photo-4876671.jpeg",
-  "https://images.pexels.com/photos/29475063/pexels-photo-29475063.jpeg",
-  "https://images.pexels.com/photos/18124948/pexels-photo-18124948.jpeg",
+  { src: "https://images.pexels.com/photos/19872375/pexels-photo-19872375.jpeg", title: "Shoreline Makeover", desc: "Cleared debris and fresh shoreline for better access" },
+  { src: "https://images.pexels.com/photos/33108373/pexels-photo-33108373.jpeg", title: "Tree Line Trim", desc: "Selective trimming to open up scenic views" },
+  { src: "https://images.pexels.com/photos/30108585/pexels-photo-30108585.jpeg", title: "Weed Removal", desc: "Improved water clarity with targeted aquatic treatment" },
+  { src: "https://images.pexels.com/photos/9246492/pexels-photo-9246492.jpeg", title: "Debris Clearing", desc: "Complete junk removal for a cleaner waterfront" },
+  { src: "https://images.pexels.com/photos/4876671/pexels-photo-4876671.jpeg", title: "Restored Bank", desc: "Repaired shoreline for long-term stability" },
+  { src: "https://images.pexels.com/photos/29475063/pexels-photo-29475063.jpeg", title: "Seasonal Cleanup", desc: "Fast, reliable seasonal maintenance" },
+  { src: "https://images.pexels.com/photos/18124948/pexels-photo-18124948.jpeg", title: "Complete Refresh", desc: "Full-service restoration for a picture-perfect lakefront" },
 ]
 
 export default function Gallery({ scrollY }: GalleryProps) {
@@ -90,7 +90,7 @@ export default function Gallery({ scrollY }: GalleryProps) {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Work</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">See the transformation we bring to waterfront properties</p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Transformations that speak for themselves.</p>
         </div>
 
         {/* Before/After Slider */}
@@ -131,12 +131,19 @@ export default function Gallery({ scrollY }: GalleryProps) {
 
           {/* Masonry Grid */}
           <div className="mt-8 masonry-grid">
-            {[...additionalImages, current.after, current.before].map((src, idx) => (
+            {[
+              ...additionalImages,
+              { src: current.after, title: `${current.title} — After`, desc: `After: ${current.title} completed by our team` },
+              { src: current.before, title: `${current.title} — Before`, desc: `Before: pre-project condition` },
+            ].map((item, idx) => (
               <div key={idx} className="masonry-item group rounded-lg overflow-hidden relative">
-                <img src={src} alt={`Gallery ${idx + 1}`} className="w-full object-cover h-full" onClick={() => setLightboxSrc(src)} />
+                <img src={item.src} alt={item.title || `Gallery ${idx + 1}`} className="w-full object-cover h-full" onClick={() => setLightboxSrc(item.src)} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-all">
-                  <div className="bg-background/60 text-foreground px-3 py-1 rounded">View</div>
+                  <div>
+                    <div className="bg-background/60 text-foreground px-3 py-1 rounded font-semibold">{item.title}</div>
+                    <div className="bg-background/60 text-muted-foreground px-3 py-1 rounded mt-2 text-sm">{item.desc}</div>
+                  </div>
                 </div>
               </div>
             ))}
