@@ -86,7 +86,7 @@ export default function Contact({ scrollY }: ContactProps) {
             {/* Contact Info Card */}
             <div className="p-6 rounded-xl border border-primary/20 bg-card/60 hover-float">
               <div className="flex items-center gap-4">
-                <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800" alt="Local Lakefront logo" className="w-12 h-12 object-contain rounded-md" />
+                <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800" alt="Local Lakefront logo" className="w-12 h-12 object-contain" />
                 <div>
                   <p className="font-semibold text-foreground">Local Lakefront</p>
                   <p className="text-sm text-muted-foreground">Your waterfront, perfected.</p>
