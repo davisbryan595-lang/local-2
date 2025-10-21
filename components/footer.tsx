@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <a href="#top" className="inline-block">
-              <div className="w-20 h-20 relative overflow-hidden rounded-md animate-float animate-glow-pulse hover-glow">
+              <div className="w-20 h-20 relative overflow-hidden rounded-md animate-float">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800"
                   alt="Local Lakefront logo"
