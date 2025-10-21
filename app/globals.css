@@ -427,6 +427,3 @@ html { scroll-behavior: smooth; }
 }
 .liquid-btn > * { position: relative; z-index: 10; }
 .liquid-btn:hover::before { transform: translateX(0%); }
-
-/* Theme-colored glow under cards on hover */
-.pricing-card:hover { box-shadow: 0 30px 40px color-mix(in oklch, var(--primary) 14%, transparent), 0 10px 20px color-mix(in oklch, var(--primary) 10%, transparent); }
