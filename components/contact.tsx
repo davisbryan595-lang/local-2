@@ -47,7 +47,7 @@ export default function Contact({ scrollY }: ContactProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-xl border border-primary/20 bg-card/50 backdrop-blur">
+          <form onSubmit={handleSubmit} className="space-y-6 p-8 rounded-xl border border-primary/20 bg-card/50 backdrop-blur hover-float">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Name</label>
               <input id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2 rounded-lg bg-background border border-primary/20 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" />
@@ -81,19 +81,45 @@ export default function Contact({ scrollY }: ContactProps) {
             </div>
           </form>
 
-          {/* Map & Phone CTA */}
+          {/* Info + Map + CTA */}
           <div className="space-y-6">
-            <div className="rounded-xl overflow-hidden border border-primary/20">
+            {/* Contact Info Card */}
+            <div className="p-6 rounded-xl border border-primary/20 bg-card/60 hover-float">
+              <div className="flex items-center gap-4">
+                <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800" alt="Local Lakefront logo" className="w-12 h-12 object-contain rounded-md" />
+                <div>
+                  <p className="font-semibold text-foreground">Local Lakefront</p>
+                  <p className="text-sm text-muted-foreground">Your waterfront, perfected.</p>
+                </div>
+              </div>
+              <ul className="mt-4 space-y-3 text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <Phone size={18} className="text-primary" />
+                  <a href="tel:863-215-9440" className="hover:text-primary transition-colors">863-215-9440</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail size={18} className="text-primary" />
+                  <a href="mailto:locallakefrontservices@gmail.com" className="hover:text-primary transition-colors">locallakefrontservices@gmail.com</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <MapPin size={18} className="text-primary" />
+                  <span>Polk, Lake & Hernando Counties, FL</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Map */}
+            <div className="rounded-xl overflow-hidden border border-primary/20 hover-float">
               <iframe
                 title="Service Area Map"
                 src="https://www.google.com/maps?q=Polk+County+FL&output=embed"
                 className="w-full h-72"
-                style={{ border: 0 }}
                 loading="lazy"
               />
             </div>
 
-            <div className="p-6 rounded-xl border border-primary/20 bg-card/60 text-center">
+            {/* Phone CTA */}
+            <div className="p-6 rounded-xl border border-primary/20 bg-card/60 text-center hover-float">
               <h3 className="text-2xl font-bold text-foreground mb-2">Ready to start?</h3>
               <p className="text-muted-foreground mb-4">Call us for a free consultation and quote.</p>
               <a href="tel:863-215-9440" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover-glow">

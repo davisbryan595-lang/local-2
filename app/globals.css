@@ -203,6 +203,10 @@
   transform: translateY(-4px);
 }
 
+/* Hover float utility */
+.hover-float { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.hover-float:hover { transform: translateY(-6px); }
+
 /* Site-wide background snake video */
 .site-bg-video-container {
   position: fixed;
@@ -382,14 +386,14 @@ html { scroll-behavior: smooth; }
   flex-direction: column;
   justify-content: space-between;
 }
-.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 40px 60px rgba(255,102,0,0.12); }
+.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 40px 60px color-mix(in oklch, var(--primary) 18%, transparent); }
 .pricing-card::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 1rem;
   padding: 2px;
-  background: linear-gradient(90deg, rgba(255,140,0,0.15), rgba(255,60,60,0.12));
+  background: linear-gradient(90deg, color-mix(in oklch, var(--primary) 20%, transparent), color-mix(in oklch, var(--primary) 12%, transparent));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   pointer-events: none;
@@ -416,5 +420,5 @@ html { scroll-behavior: smooth; }
 .liquid-btn > * { position: relative; z-index: 10; }
 .liquid-btn:hover::before { transform: translateX(0%); }
 
-/* Orange/red glow under cards on hover */
-.pricing-card:hover { box-shadow: 0 30px 40px rgba(255,120,60,0.12), 0 10px 20px rgba(255,80,40,0.08); }
+/* Theme-colored glow under cards on hover */
+.pricing-card:hover { box-shadow: 0 30px 40px color-mix(in oklch, var(--primary) 14%, transparent), 0 10px 20px color-mix(in oklch, var(--primary) 10%, transparent); }

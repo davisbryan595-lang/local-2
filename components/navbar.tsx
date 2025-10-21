@@ -14,18 +14,19 @@ export default function Navbar({ scrollY }: NavbarProps) {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 bg-transparent`}
     >
-      <div className="nav-bg-image" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 relative overflow-hidden rounded-md">
-              <img src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2F964148a122ef436c901b05bd9983b95f?format=webp&width=800" alt="Local Lakefront logo" className="w-full h-full object-cover" />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-primary">Local Lakefront</h1>
-              <p className="text-xs text-muted-foreground">Waterfront Perfected</p>
-            </div>
+            <a href="#top" className="block">
+              <div className="w-24 h-24 relative overflow-hidden rounded-md animate-float animate-glow-pulse hover-glow">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800"
+                  alt="Local Lakefront logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
           </div>
 
           {/* Desktop Menu */}
