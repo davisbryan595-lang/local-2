@@ -35,7 +35,7 @@ export default function Services({ scrollY }: ServicesProps) {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Services</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Services</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Skilled waterfront solutions — fast, safe, and sustainable.
           </p>

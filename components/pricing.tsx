@@ -26,7 +26,7 @@ export default function Pricing() {
     <section id="pricing" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background/10 to-card/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Pricing</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Simple, transparent pricing for common jobs. Contact us for custom quotes.</p>
         </div>
 

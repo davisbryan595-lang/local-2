@@ -89,7 +89,7 @@ export default function Gallery({ scrollY }: GalleryProps) {
       <div className="w-full mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Our Work</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Work</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Transformations that speak for themselves.</p>
         </div>
 
@@ -138,12 +138,10 @@ export default function Gallery({ scrollY }: GalleryProps) {
             ].map((item, idx) => (
               <div key={idx} className="masonry-item group rounded-lg overflow-hidden relative">
                 <img src={item.src} alt={item.title || `Gallery ${idx + 1}`} className="w-full object-cover h-full" onClick={() => setLightboxSrc(item.src)} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-all">
-                  <div>
-                    <div className="bg-background/60 text-foreground px-3 py-1 rounded font-semibold">{item.title}</div>
-                    <div className="bg-background/60 text-muted-foreground px-3 py-1 rounded mt-2 text-sm">{item.desc}</div>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute bottom-4 left-4 p-4">
+                  <div className="bg-background/70 text-foreground px-3 py-1 rounded font-semibold">{item.title}</div>
+                  <div className="bg-background/70 text-muted-foreground px-3 py-1 rounded mt-2 text-sm">{item.desc}</div>
                 </div>
               </div>
             ))}
