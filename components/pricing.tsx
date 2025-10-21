@@ -3,50 +3,39 @@
 import React from "react"
 
 export default function Pricing() {
-  const plans = [
-    {
-      name: "Basic",
-      price: "$299",
-      features: ["Shoreline cleanup", "Debris removal", "Up to 2 hours"],
-    },
-    {
-      name: "Standard",
-      price: "$599",
-      features: ["Everything in Basic", "Tree trimming", "Aquatic weed spot treatment"],
-      popular: true,
-    },
-    {
-      name: "Premium",
-      price: "$1099",
-      features: ["Everything in Standard", "Full aquatic weed removal", "Priority scheduling"],
-    },
-  ]
-
   return (
     <section id="pricing" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background/10 to-card/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Pricing</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Simple, transparent pricing for common jobs. Contact us for custom quotes.</p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Every job is unique—pricing depends on location, size, and access. Contact us for a free, no‑obligation estimate.
+          </p>
         </div>
 
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
-          {plans.map((plan) => (
-            <div key={plan.name} className={`pricing-card ${plan.popular ? "shadow-lg scale-105" : ""}`}>
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-foreground">{plan.name}</h3>
-                <div className="price">Starting at <span className="text-2xl ml-2">{plan.price}</span></div>
-              </div>
-              <ul className="mb-6 text-muted-foreground">
-                {plan.features.map((f) => (
-                  <li key={f} className="py-1">{f}</li>
-                ))}
-              </ul>
-              <a href="#contact" className="liquid-btn inline-block w-full text-center bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold">
-                <span>Choose {plan.name}</span>
-              </a>
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+          <div className="pricing-card">
+            <h3 className="text-xl font-semibold text-foreground mb-4">How We Price</h3>
+            <ul className="mb-6 text-muted-foreground">
+              <li className="py-1">Location and travel distance</li>
+              <li className="py-1">Tree size, density, and condition</li>
+              <li className="py-1">Access for equipment and crew</li>
+              <li className="py-1">Debris hauling and disposal needs</li>
+            </ul>
+          </div>
+
+          <div className="pricing-card">
+            <h3 className="text-xl font-semibold text-foreground mb-4">Get an Estimate</h3>
+            <p className="text-muted-foreground mb-6">Share your project details and we’ll schedule a quick on‑site visit.</p>
+            <div className="space-y-3 mb-6 text-muted-foreground">
+              <div>• Call: 863‑215‑9440</div>
+              <div>• Or use the form below to request a quote</div>
             </div>
-          ))}
+            <div className="flex gap-3">
+              <a href="tel:863-215-9440" className="liquid-btn inline-block w-full text-center bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold">Call Now</a>
+              <a href="#contact" className="inline-block w-full text-center border-2 border-primary text-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary/10 transition-all">Request a Quote</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
