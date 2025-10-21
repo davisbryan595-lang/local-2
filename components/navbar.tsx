@@ -63,7 +63,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-3 border-top border-primary/20">
+          <div className="md:hidden pb-4 space-y-3 border-t border-primary/20">
             <a href="#top" className="block text-foreground hover:text-primary transition-colors py-2">Home</a>
             <a href="#services" className="block text-foreground hover:text-primary transition-colors py-2">Services</a>
             <a href="#gallery" className="block text-foreground hover:text-primary transition-colors py-2">Gallery</a>
