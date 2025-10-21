@@ -242,6 +242,14 @@
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
+
+/* Dark tinted glass when scrolled */
+.nav-scrolled {
+  background: linear-gradient(180deg, color-mix(in oklch, var(--card) 70%, transparent), color-mix(in oklch, var(--background) 20%, rgba(0,0,0,0.25)));
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
 .nav-snake-bg {
   position: absolute;
   inset: 0;
@@ -386,7 +394,7 @@ html { scroll-behavior: smooth; }
   flex-direction: column;
   justify-content: space-between;
 }
-.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 40px 60px color-mix(in oklch, var(--primary) 18%, transparent); }
+.pricing-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px color-mix(in oklch, var(--primary) 10%, transparent); }
 .pricing-card::after {
   content: "";
   position: absolute;
@@ -400,7 +408,7 @@ html { scroll-behavior: smooth; }
   opacity: 0;
   transition: opacity 0.25s ease;
 }
-.pricing-card:hover::after { opacity: 1; }
+.pricing-card:hover::after { opacity: 0.06; }
 .pricing-card .price { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
 
 /* Liquid-fill button */
@@ -419,6 +427,3 @@ html { scroll-behavior: smooth; }
 }
 .liquid-btn > * { position: relative; z-index: 10; }
 .liquid-btn:hover::before { transform: translateX(0%); }
-
-/* Theme-colored glow under cards on hover */
-.pricing-card:hover { box-shadow: 0 30px 40px color-mix(in oklch, var(--primary) 14%, transparent), 0 10px 20px color-mix(in oklch, var(--primary) 10%, transparent); }
