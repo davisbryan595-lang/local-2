@@ -23,7 +23,7 @@ export default function Navbar({ scrollY }: NavbarProps) {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800"
                 alt="Local Lakefront logo"
-                className="logo-image w-28 h-28 md:w-32 md:h-32 object-contain animate-float animate-glow-pulse hover-glow"
+                className="logo-image w-28 h-28 md:w-32 md:h-32 object-contain animate-float"
               />
             </a>
           </div>
