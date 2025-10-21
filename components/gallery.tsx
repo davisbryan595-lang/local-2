@@ -98,6 +98,8 @@ export default function Gallery({ scrollY }: GalleryProps) {
           <div
             ref={sliderRef}
             onPointerDown={handlePointerDown}
+            onMouseMove={(e) => !isDragging && updateSliderFromClientX(e.clientX)}
+            onMouseLeave={() => setIsDragging(false)}
             className="relative w-full h-96 rounded-xl overflow-hidden border-2 border-primary/30 cursor-col-resize group touch-none"
           >
             {/* After Image (Background) */}
@@ -150,8 +152,8 @@ export default function Gallery({ scrollY }: GalleryProps) {
           {/* Dots */}
           <div className="flex gap-2">
             {beforeAfterPairs.map((_, index) => (
-              <button key={index} onClick={() => setActiveIndex(index)} className={`w-3 h-3 rounded-full transition-all ${index === activeIndex ? "bg-primary w-8" : "bg-primary/30 hover:bg-primary/60"}`} />
-            ))}
+              <button key={index} onClick={() => setActiveIndex(index)} className={`w-3 h-3 rounded-full transition-all ${index === activeIndex ? "bg-primary w-8" : "bg-primary/30 hover:bg-primary/60"}`} />)
+            )}
           </div>
 
           <button onClick={handleNext} className="p-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all">

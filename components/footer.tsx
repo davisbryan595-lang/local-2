@@ -9,8 +9,16 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold text-primary mb-2">Local Lakefront</h3>
-            <p className="text-muted-foreground">Your waterfront, perfected.</p>
+            <a href="#top" className="inline-block">
+              <div className="w-20 h-20 relative overflow-hidden rounded-md animate-float animate-glow-pulse hover-glow">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F5c758e804cba4fa3a488e9088887877b%2Fa9707f64ddf549f99a2b80f188df10f0?format=webp&width=800"
+                  alt="Local Lakefront logo"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <p className="text-muted-foreground mt-2">Your waterfront, perfected.</p>
           </div>
 
           {/* Quick Links */}
