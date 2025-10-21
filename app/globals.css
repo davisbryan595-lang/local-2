@@ -394,7 +394,7 @@ html { scroll-behavior: smooth; }
   flex-direction: column;
   justify-content: space-between;
 }
-.pricing-card:hover { transform: translateY(-8px); box-shadow: 0 40px 60px color-mix(in oklch, var(--primary) 18%, transparent); }
+.pricing-card:hover { transform: translateY(-6px); box-shadow: 0 12px 24px color-mix(in oklch, var(--primary) 10%, transparent); }
 .pricing-card::after {
   content: "";
   position: absolute;
